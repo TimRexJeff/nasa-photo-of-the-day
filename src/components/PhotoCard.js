@@ -1,12 +1,14 @@
 import React from "react"
 
 function PhotoCard(props) {
+    console.log(props)
     return (
         <div>
-            <h2>Sample Title</h2>
-            <img />
+            <h2>{props.title}</h2>
+            <img src={props.url}/>
+            <div>{props.date}</div>
             <p>
-                Sample Explanation
+                {props.explanation}
             </p>
         </div>
     )
