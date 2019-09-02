@@ -1,16 +1,23 @@
 import React from "react"
+import './PhotoCard.scss'
+import { Card, Image } from 'semantic-ui-react'
+import styled from 'styled-components'
+import { StyledH2 } from '../Styles.js'
+
 
 function PhotoCard(props) {
     console.log(props)
     return (
-        <div>
-            <h2>{props.title}</h2>
-            <img src={props.url}/>
-            <div>{props.date}</div>
-            <p>
-                {props.explanation}
-            </p>
-        </div>
+        <Card className="photo-card">
+            <Image src={props.url}/>
+            <StyledH2 color="red">{props.title}</StyledH2>
+            <Card.Content>
+                <div>{props.date}</div>
+                <Card.Description className="content">
+                    {props.explanation}
+                </Card.Description>
+            </Card.Content>
+        </Card>
     )
 }
 
